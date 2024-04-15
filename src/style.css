@@ -7,6 +7,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
+  cursor: default;
 }
 
 h1 {
@@ -14,14 +15,49 @@ h1 {
   font-weight: 300;
 }
 
-main {
-  padding: 0px;
-  margin: 0px;
+form {
+  min-width: 495px;
 }
 
 footer {
-  padding: 0px;
-  margin: 0px;
+  font-size: 10px;
+  font-family: Arial;
+}
+
+a {
+  text-decoration: none;
+  color: #0084fb;
+}
+
+.search-form {
+  flex-grow: 1;
+  min-width: 380px;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #012f78;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  margin-right: 5px;
+}
+
+.search-form:hover {
+  cursor: text;
+}
+
+.search-button {
+  font-size: 12px;
+  background-color: #0084fb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  min-width: 100px;
+  white-space: nowrap;
+}
+
+.search-button:hover {
+  cursor: pointer;
 }
 
 .weather-app {
@@ -35,8 +71,13 @@ footer {
 }
 
 .location {
-  padding: 20px 0px 10px;
+  padding: 20px 0px 0px;
   font-size: 15px;
+}
+
+.date {
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 
 span.material-symbols-outlined.location-icon {
@@ -46,14 +87,16 @@ span.material-symbols-outlined.location-icon {
 }
 
 .current-temperature {
-  font-size: 86px;
+  font-size: 92px;
   font-weight: 100;
+  position: relative;
+  top: 10px;
 }
 
 .celsius {
   font-size: 26px;
   position: relative;
-  top: -42px;
+  top: -34px;
 }
 
 .current-weather-container {
