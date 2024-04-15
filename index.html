@@ -8,43 +8,60 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <form action="">
-        <input type="search" placeholder="Enter a city" required />
-        <input type="submit" value="search" />
-      </form>
-    </header>
-    <main>
-      <h1>Berlin</h1>
-      <div class="current-weather-container">
-        <span class="date" id="date">Saturday 13:15</span>
-        <br />
-        <span class="current-temperature" id="current-temperature">20</span>
-        <span class="celsius">°C</span>
-        <br />
-        <span class="current-condition" id="current-condition">sunny</span>
-        <br />
-        <span class="humidtity-wind">
-          <span class="material-symbols-outlined"> humidity_percentage </span>
-          40% <span class="material-symbols-outlined"> air </span> 16 km/h
-        </span>
-      </div>
-      <div class="current-temperature-icon">🌤️</div>
-    </main>
-    <footer>
-      Designed and developed by
-      <a href="https://github.com/Katrinfelina" target="_blank"
-        >Katrin Guschke</a
-      >. Open-sourced on
-      <a href="https://github.com/Katrinfelina/weatherwise-App" target="_blank"
-        >GitHub</a
-      >. <br />
-      Hoested by
-      <a href="https://weatherwise-forecast.netlify.app/" target="_blank"
-        >Netlify</a
-      >.
-    </footer>
+    <div class="weather-app">
+      <header>
+        <form action="">
+          <input type="search" placeholder="Enter a city" required />
+          <input type="submit" value="search" />
+        </form>
+      </header>
+      <main>
+        <div class="location">
+          <span class="material-symbols-outlined location-icon">
+            location_on
+          </span>
+          <h1>Berlin</h1>
+        </div>
+        <div class="current-weather-container">
+          <div class="weather-description">
+            <span class="date" id="date">Saturday 13:15</span>
+            <br />
+            <span class="current-temperature" id="current-temperature">20</span>
+            <span class="celsius">°C</span>
+            <br />
+            <span class="current-condition" id="current-condition">sunny</span>
+            <br />
+            <span class="humidtity-wind">
+              <span class="material-symbols-outlined">
+                humidity_percentage
+              </span>
+              40% <span class="material-symbols-outlined"> air </span> 16 km/h
+            </span>
+          </div>
+          <div class="current-temperature-icon">🌤️</div>
+        </div>
+      </main>
+      <footer>
+        Designed and developed by
+        <a href="https://github.com/Katrinfelina" target="_blank"
+          >Katrin Guschke</a
+        >. Open-sourced on
+        <a
+          href="https://github.com/Katrinfelina/weatherwise-App"
+          target="_blank"
+          >GitHub</a
+        >. Hoested by
+        <a href="https://weatherwise-forecast.netlify.app/" target="_blank"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
   </body>
 </html>
