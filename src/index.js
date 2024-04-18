@@ -71,3 +71,27 @@ function formatDate(date) {
 
 let date = document.querySelector("#date");
 date.innerHTML = formatDate(new Date());
+
+function showSpinner() {
+  document.getElementById("loading-spinner").style.display = "block";
+}
+
+function hideSpinner() {
+  document.getElementById("loading-spinner").style.display = "none";
+}
+
+function searchCity(city) {
+  showSpinner(); // Spinner anzeigen, bevor der API-Aufruf beginnt
+  let apiKey = "8d334a66tf350346425d1bf477off27e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      refreshWeather(response);
+      hideSpinner(); // Spinner verbergen, nachdem die Daten erfolgreich geladen wurden
+    })
+    .catch((error) => {
+      console.error("Error fetching weather:", error);
+      hideSpinner(); // Spinner auch verbergen, wenn ein Fehler auftritt
+    });
+}
