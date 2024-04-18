@@ -17,11 +17,12 @@
   <body>
     <div class="weather-app">
       <header>
-        <form>
+        <form class="search-form" id="search-form">
           <input
-            class="search-form"
             type="search"
             placeholder="Enter a city"
+            class="search-input"
+            id="search-input"
             required
           />
           <input class="search-button" type="submit" value="search" />
@@ -32,7 +33,7 @@
           <span class="material-symbols-outlined location-icon">
             location_on
           </span>
-          <h1>Berlin</h1>
+          <h1 id="city">Berlin</h1>
         </div>
         <div class="current-weather-container">
           <div class="weather-description">
@@ -47,7 +48,9 @@
               <span class="material-symbols-outlined">
                 humidity_percentage
               </span>
-              40% <span class="material-symbols-outlined"> air </span> 16 km/h
+              <span id="current-humidity">40</span> %
+              <span class="material-symbols-outlined"> air </span>
+              <span id="current-wind-speed">16</span> km/h
             </span>
           </div>
           <div class="current-temperature-icon">🌤️</div>
@@ -68,5 +71,7 @@
         >.
       </footer>
     </div>
+
+    <script src="src/index.js"></script>
   </body>
 </html>

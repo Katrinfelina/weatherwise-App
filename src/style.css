@@ -2,7 +2,7 @@ body {
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/123/327/original/Blue_Sky.jpg?1713204497");
+  background: linear-gradient(170deg, #005bea 20%, #00c6fb 80%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -17,6 +17,7 @@ h1 {
 
 form {
   min-width: 495px;
+  border: none;
 }
 
 footer {
@@ -29,11 +30,12 @@ a {
   color: #48bdfd;
 }
 
-.search-form {
+.search-input {
+  outline: none;
   flex-grow: 1;
   min-width: 380px;
   background-color: rgba(255, 255, 255, 0.5);
-  color: #012f78;
+  color: grey;
   font-size: 14px;
   padding: 10px;
   border-radius: 4px;
@@ -41,7 +43,7 @@ a {
   margin-right: 5px;
 }
 
-.search-form:hover {
+.search-input:hover {
   cursor: text;
 }
 
@@ -61,7 +63,7 @@ a {
 }
 
 .weather-app {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.45);
   color: rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.1);
