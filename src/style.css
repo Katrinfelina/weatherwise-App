@@ -120,9 +120,10 @@ span.material-symbols-outlined.location-icon {
 }
 
 .current-temperature-icon {
-  font-size: 180px;
+  width: 300px;
+  height: 300px;
   position: relative;
-  top: -80px;
+  top: -60px;
   right: -10px;
 }
 
