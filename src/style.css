@@ -22,6 +22,7 @@ form {
 }
 
 footer {
+  color: whitesmoke;
   font-size: 10px;
   font-family: Arial;
   text-align: center;
@@ -31,7 +32,7 @@ footer {
 
 a {
   text-decoration: none;
-  color: #48bdfd;
+  color: #b4e3fc;
 }
 
 .search-input {
@@ -66,13 +67,14 @@ a {
   cursor: pointer;
 }
 
-.weather-app {
+.current-weather {
   background: rgba(255, 255, 255, 0.5);
   color: rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.1);
   min-width: 500px;
   max-width: 500px;
+  max-height: 260px;
   margin: 50px auto;
   padding: 20px;
 }
@@ -156,6 +158,32 @@ span.material-symbols-outlined.location-icon {
   color: #48bdfd;
   font-weight: lighter;
   font-size: 16px;
+}
+
+.row {
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 20px 50px rgba(65, 50, 100, 0.1);
+  min-width: 80px;
+  max-width: 80px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.forecast-day {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.forecast-temperature {
+  font-size: 13px;
+}
+
+.forecast-temperature-min {
+  opacity: 60%;
 }
 
 .spinner {
