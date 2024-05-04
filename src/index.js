@@ -69,8 +69,40 @@ function setDefaultCity() {
 }
 document.addEventListener("DOMContentLoaded", setDefaultCity);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#weather-forecast");
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+        <div class="col-2">
+          <div class="forecast-day">${day}</div>
+          <div class="forecast-icon">
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              alt=""
+              width="36"
+            />
+          </div>
+          <div class="forecast-temperature">
+            <span class="forecast-temperature-max">23°</span>
+            <span class="forecast-temperature-min">13°</span>
+          </div>
+        </div>
+    `;
+  });
+
+  forecastElement.innerHTML = forecastHtml;
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+displayForecast();
 
 function showSpinner() {
   document.getElementById("loading-spinner").style.display = "block";
