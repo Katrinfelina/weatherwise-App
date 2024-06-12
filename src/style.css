@@ -2,7 +2,12 @@ body {
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background: linear-gradient(170deg, #0090fd 20%, #51d5f9 80%);
+  background: linear-gradient(
+    109.6deg,
+    #50b7ea 11.2%,
+    #70d1f8 55.4%,
+    #f4e08f 100.2%
+  );
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -54,7 +59,7 @@ a {
 
 .search-button {
   font-size: 14px;
-  background-color: #0084fb;
+  background-color: #059fed;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -68,7 +73,7 @@ a {
 }
 
 .current-weather {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   color: rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.1);
@@ -156,13 +161,13 @@ span.material-symbols-outlined.location-icon {
 }
 
 .material-symbols-outlined {
-  color: #48bdfd;
+  color: #059fed;
   font-weight: lighter;
   font-size: 16px;
 }
 
 .col-2 {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
   color: rgb(255, 255, 255);
   text-align: center;
   border-radius: 15px;
