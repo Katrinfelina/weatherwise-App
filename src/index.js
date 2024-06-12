@@ -5,7 +5,7 @@ function refreshWeather(response) {
   let description = response.data.condition.description;
   let city = response.data.city;
   let date = new Date(response.data.time * 1000);
-  let icon = `<img src="${response.data.condition.icon_url}" alt="" class="current-temperature-icon" />`;
+  let icon = `<img src="media/${response.data.condition.icon}.png" alt="${description}" class="current-temperature-icon" />`;
 
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#current-condition");

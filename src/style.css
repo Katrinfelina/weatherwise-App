@@ -134,11 +134,12 @@ span.material-symbols-outlined.location-icon {
 }
 
 .current-temperature-icon {
-  max-width: 300px;
-  height: 300px;
+  width: 210px; /* Breite des Icons festlegen */
+  height: 180px; /* Höhe des Icons festlegen */
+  object-fit: contain; /* Sorgt dafür, dass das Icon seine Proportionen behält */
   position: relative;
-  top: -70px;
-  left: -30px;
+  top: -20px;
+  left: -20px;
 }
 
 .humidtity-wind {
