@@ -1,10 +1,18 @@
+html,
+body {
+  height: 100%; /* Stellen Sie sicher, dass HTML und BODY die volle Höhe einnehmen */
+  margin: 0; /* Entfernt den Standard-Margin */
+  padding: 0; /* Entfernt den Standard-Padding */
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
 body {
   font-family: "Arimo", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   background: linear-gradient(
     109.6deg,
-    #50b7ea 11.2%,
+    #20a8ec 11.2%,
     #70d1f8 55.4%,
     #f4e08f 100.2%
   );
@@ -12,7 +20,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   cursor: default;
-  /* height: 100vh; Optional: Setzt die Höhe des Körpers auf die volle Höhe des Viewports */
 }
 
 .light-background {
@@ -49,6 +56,7 @@ footer {
   font-family: Arial;
   text-align: center;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 a {
@@ -63,7 +71,6 @@ a {
 .weatherwise-logo img {
   display: block;
   margin: auto;
-  padding-bottom: 5px;
   width: 300px;
 }
 
@@ -86,7 +93,7 @@ a {
 
 .search-button {
   font-size: 14px;
-  background-color: #059fed;
+  background-color: #3db0ea;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -194,7 +201,7 @@ span.material-symbols-outlined.location-icon {
 }
 
 .material-symbols-outlined {
-  color: #059fed;
+  color: #3db0ea;
   font-weight: lighter;
   font-size: 16px;
 }
@@ -247,19 +254,6 @@ span.material-symbols-outlined.location-icon {
   opacity: 60%;
 }
 
-.spinner {
-  border: 5px solid #e5f5f9;
-  border-top: 5px solid #50b7ea;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 2s linear infinite;
-}
-
-.dark-background .spinner {
-  border-top: 5px solid #4e767a;
-}
-
 .col-2:hover {
   transform: scale(1.4);
   background-color: #ffffff;
@@ -278,6 +272,19 @@ span.material-symbols-outlined.location-icon {
 
 .dark-background .col-2:hover .forecast-day {
   color: #344d4e;
+}
+
+.spinner {
+  border: 5px solid #e5f5f9;
+  border-top: 5px solid #50b7ea;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+.dark-background .spinner {
+  border-top: 5px solid #4e767a;
 }
 
 @keyframes spin {
