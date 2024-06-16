@@ -1,3 +1,12 @@
+function updateBackground(iconName) {
+  const bodyElement = document.body;
+  if (iconName.includes("day")) {
+    bodyElement.className = "light-background";
+  } else if (iconName.includes("night")) {
+    bodyElement.className = "dark-background";
+  }
+}
+
 function refreshWeather(response) {
   console.log("API Response:", response);
 
@@ -7,7 +16,9 @@ function refreshWeather(response) {
   let description = response.data.condition.description;
   let city = response.data.city;
   let date = new Date(response.data.time * 1000);
-  let icon = `<img src="media/${response.data.condition.icon}.png" alt="${description}" class="current-temperature-icon" />`;
+  let iconName = response.data.condition.icon;
+
+  let icon = `<img src="media/${iconName}.png "alt="${description}" class="current-temperature-icon" />`;
 
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#current-condition");
@@ -24,6 +35,8 @@ function refreshWeather(response) {
   windElement.innerHTML = wind;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = icon;
+
+  updateBackground(iconName);
 
   getForecast(response.data.city);
 }
@@ -49,7 +62,7 @@ function formatDate(date) {
     currentHours = `0${currentHours}`;
   }
 
-  return `${currentDay}, ${currentHours}:${currentMinutes}, `;
+  return `${currentDay}, ${currentHours}:${currentMinutes},`;
 }
 
 function searchCity(city) {
@@ -82,6 +95,12 @@ function getForecast(city) {
 
 function displayForecast(response) {
   let forecastHtml = "";
+  let minTemperatureToday = Math.round(
+    response.data.daily[0].temperature.minimum
+  );
+  let maxTemperatureToday = Math.round(
+    response.data.daily[0].temperature.maximum
+  );
 
   response.data.daily.forEach(function (day, index) {
     if (index > 0 && index < 7) {
@@ -108,6 +127,9 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHtml;
+
+  let temperatureSpanElement = document.querySelector("#min-max-teperature");
+  temperatureSpanElement.innerHTML = `${maxTemperatureToday}°C/${minTemperatureToday}°C`;
 }
 
 let searchFormElement = document.querySelector("#search-form");

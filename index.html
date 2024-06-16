@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weatherwise | 5-Day Weather Forecast</title>
+    <title>weatherwise | 7-Day Weather Forecast</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
@@ -17,12 +17,14 @@
     />
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
   </head>
-  <body>
+  <body class="">
     <div id="loading-spinner" style="display: none">
       <div class="spinner"></div>
     </div>
 
-    <div class="weatherwise-logo"><img src="media/weatherwise_logo_vers4.png" alt=""></div>
+    <div class="weatherwise-logo">
+      <img src="media/weatherwise_logo_vers4.png" alt="" />
+    </div>
 
     <div class="current-weather">
       <header>
@@ -51,7 +53,7 @@
             <br />
             <span class="current-temperature" id="current-temperature"></span>
             <span class="celsius">°C</span>
-            <span class="min-max-temperature">23°C/13°C</span>
+            <span class="min-max-temperature" id="min-max-teperature"></span>
             <br />
             <span class="humidtity-wind">
               <span class="material-symbols-outlined">
@@ -67,8 +69,7 @@
       </main>
     </div>
 
-    <div class="weather-forecast" id="weather-forecast">
-      
+    <div class="weather-forecast" id="weather-forecast"></div>
 
     <footer>
       Designed and developed by
@@ -84,6 +85,5 @@
     </footer>
 
     <script src="src/index.js"></script>
-
   </body>
 </html>

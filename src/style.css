@@ -15,6 +15,24 @@ body {
   /* height: 100vh; Optional: Setzt die Höhe des Körpers auf die volle Höhe des Viewports */
 }
 
+.light-background {
+  background: linear-gradient(
+    109.6deg,
+    #50b7ea 11.2%,
+    #70d1f8 55.4%,
+    #f4e08f 100.2%
+  );
+}
+
+.dark-background {
+  background: linear-gradient(
+    109.6deg,
+    #263738 11.2%,
+    #344d4e 55.4%,
+    #4e767a 100.2%
+  );
+}
+
 h1 {
   display: inline;
   font-weight: 300;
@@ -30,13 +48,16 @@ footer {
   font-size: 10px;
   font-family: Arial;
   text-align: center;
-  position: relative;
-  z-index: 1000; /* Stellen Sie sicher, dass dies hoch genug ist, um über anderen Elementen zu sein */
+  padding: 10px;
 }
 
 a {
   text-decoration: none;
   color: #b4e3fc;
+}
+
+.dark-background a {
+  color: #7ab4bb;
 }
 
 .weatherwise-logo img {
@@ -73,6 +94,10 @@ a {
   border-radius: 4px;
   min-width: 100px;
   white-space: nowrap;
+}
+
+.dark-background .search-button {
+  background-color: #4e767a;
 }
 
 .search-button:hover {
@@ -148,8 +173,8 @@ span.material-symbols-outlined.location-icon {
 }
 
 .current-temperature-icon {
-  width: 210px; /* Breite des Icons festlegen */
-  height: 180px; /* Höhe des Icons festlegen */
+  width: 210px;
+  height: 180px;
   object-fit: contain; /* Sorgt dafür, dass das Icon seine Proportionen behält */
   position: relative;
   top: -20px;
@@ -175,12 +200,16 @@ span.material-symbols-outlined.location-icon {
   font-size: 16px;
 }
 
+.dark-background .material-symbols-outlined {
+  color: #385054;
+}
+
 .weather-forecast {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .col-2 {
@@ -221,11 +250,15 @@ span.material-symbols-outlined.location-icon {
 
 .spinner {
   border: 5px solid #e5f5f9;
-  border-top: 5px solid #3498db;
+  border-top: 5px solid #50b7ea;
   border-radius: 50%;
   width: 20px;
   height: 20px;
   animation: spin 2s linear infinite;
+}
+
+.dark-background .spinner {
+  border-top: 5px solid #4e767a;
 }
 
 .col-2:hover {
@@ -236,8 +269,16 @@ span.material-symbols-outlined.location-icon {
   transition-duration: 300ms;
 }
 
+.dark-background .col-2:hover {
+  color: #344d4e;
+}
+
 .col-2:hover .forecast-day {
   color: #059fed;
+}
+
+.dark-background .col-2:hover .forecast-day {
+  color: #344d4e;
 }
 
 @keyframes spin {
