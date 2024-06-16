@@ -1,4 +1,6 @@
 function refreshWeather(response) {
+  console.log("API Response:", response);
+
   let temperature = Math.round(response.data.temperature.current);
   let humidity = `${response.data.temperature.humidity} %`;
   let wind = `${response.data.wind.speed} km/h`;
@@ -22,6 +24,8 @@ function refreshWeather(response) {
   windElement.innerHTML = wind;
   timeElement.innerHTML = formatDate(date);
   iconElement.innerHTML = icon;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -63,46 +67,53 @@ function handleSearchSubmit(event) {
   searchCity(formattedCity);
 }
 
-function setDefaultCity() {
-  const defaultCity = "Berlin";
-  searchCity(defaultCity);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
 }
-document.addEventListener("DOMContentLoaded", setDefaultCity);
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#weather-forecast");
+function getForecast(city) {
+  let apiKey = "8d334a66tf350346425d1bf477off27e";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
 
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+function displayForecast(response) {
   let forecastHtml = "";
 
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index > 0 && index < 7) {
+      forecastHtml =
+        forecastHtml +
+        `
         <div class="col-2">
-          <div class="forecast-day">${day}</div>
-          <div class="forecast-icon">
-            <img
-              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
-              alt=""
-              width="36"
-            />
-          </div>
+          <div class="forecast-day">${formatDay(day.time)}</div>
+          <div class="forecast-icon"> <img src="media/${
+            day.condition.icon
+          }.png" alt="Weather icon"></div>
           <div class="forecast-temperature">
-            <span class="forecast-temperature-max">23°</span>
-            <span class="forecast-temperature-min">13°</span>
+            <div class="forecast-temperature-max">${Math.round(
+              day.temperature.maximum
+            )}°</div>
+            <div class="forecast-temperature-min">${Math.round(
+              day.temperature.minimum
+            )}°</div>
           </div>
         </div>
     `;
+    }
   });
 
+  let forecastElement = document.querySelector("#weather-forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-displayForecast();
+searchCity("Berlin");
 
 function showSpinner() {
   document.getElementById("loading-spinner").style.display = "block";

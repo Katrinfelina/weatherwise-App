@@ -42,8 +42,8 @@ a {
 .weatherwise-logo img {
   display: block;
   margin: auto;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   width: 300px;
 }
 
@@ -180,6 +180,7 @@ span.material-symbols-outlined.location-icon {
   justify-content: center;
   align-items: center;
   margin-top: 5px;
+  margin-bottom: 30px;
 }
 
 .col-2 {
@@ -188,11 +189,11 @@ span.material-symbols-outlined.location-icon {
   text-align: center;
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(65, 50, 100, 0.1);
-  width: 40px;
+  width: 42px;
   padding: 20px;
   display: inline-block;
   justify-content: space-between;
-  margin: 6px;
+  margin: 5px;
   transition: transform 300ms ease-in-out, background-color 300ms ease-in-out,
     color 300ms ease-in-out;
 }
@@ -201,6 +202,13 @@ span.material-symbols-outlined.location-icon {
   font-size: 14px;
   font-weight: 700;
   color: white;
+}
+
+.forecast-icon img {
+  max-height: 25px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 .forecast-temperature {
@@ -221,7 +229,7 @@ span.material-symbols-outlined.location-icon {
 }
 
 .col-2:hover {
-  transform: scale(1.5);
+  transform: scale(1.4);
   background-color: #ffffff;
   color: #3498db;
   transition: ease-in-out;
